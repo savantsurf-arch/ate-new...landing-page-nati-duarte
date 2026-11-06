@@ -1,0 +1,2492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nati Duarte | Método Do 0 à Confeiteira</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #141110;
+            --bg-dark-card: #1c1816;
+            --bg-light: #FBF8F5;
+            --bg-cream: #F3EDE7;
+            --bg-pink-soft: #F9E7E4;
+            --primary-pink: #E5828D;
+            --primary-pink-hover: #d96d79;
+            --pink-accent: #E5828D;
+            --gold: #D4AF37;
+            --text-dark: #221F1E;
+            --text-muted: #6B6563;
+            --text-light: #ECE8E5;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --shadow-sm: 0 4px 15px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 50px rgba(0,0,0,0.15);
+            --shadow-glow: 0 8px 30px rgba(229, 130, 141, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .cursive {
+            font-family: 'Caveat', cursive;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ===== HEADER STICKY BAR ===== */
+        .top-notice-bar {
+            background: linear-gradient(90deg, #1c1816, #2d2320, #1c1816);
+            color: #fff;
+            padding: 10px 16px;
+            font-size: 13px;
+            text-align: center;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(229, 130, 141, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .top-notice-bar span.badge {
+            background: var(--primary-pink);
+            color: #1a1514;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #F2939D, #E5828D);
+            color: #1a1514;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 16px 36px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cta::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.6s;
+        }
+
+        .btn-cta:hover::after {
+            left: 100%;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(229, 130, 141, 0.55);
+            background: linear-gradient(135deg, #f7a2ab, #eb8c97);
+        }
+
+        .btn-cta .circle-icon {
+            width: 26px;
+            height: 26px;
+            background-color: rgba(26, 21, 20, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            transition: transform 0.3s;
+        }
+
+        .btn-cta:hover .circle-icon {
+            transform: translateX(4px);
+        }
+
+        .hotmart-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #a09996;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        .hotmart-badge i {
+            color: #2ecc71;
+        }
+
+        /* ========================================================
+           1. HERO SECTION
+           ======================================================== */
+        .hero {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            position: relative;
+            padding: 70px 0 90px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(229, 130, 141, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 540px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: var(--primary-pink);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            background: rgba(229, 130, 141, 0.12);
+            padding: 4px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(229, 130, 141, 0.25);
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #ffffff;
+            margin-bottom: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-title .title-script {
+            display: block;
+            font-family: 'Caveat', cursive;
+            font-size: 78px;
+            font-weight: 700;
+            color: var(--primary-pink);
+            line-height: 0.95;
+            margin: 4px 0 16px;
+            text-shadow: 0 4px 20px rgba(229, 130, 141, 0.3);
+        }
+
+        .hero-desc {
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: #d6d0cc;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 16px 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            background: rgba(229, 130, 141, 0.1);
+            border-color: rgba(229, 130, 141, 0.35);
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            width: 42px;
+            height: 42px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            background: rgba(229, 130, 141, 0.15);
+            color: var(--primary-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .feature-card span {
+            font-size: 11px;
+            font-weight: 600;
+            color: #e5e0dc;
+            line-height: 1.35;
+            display: block;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-main-img-container {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .hero-main-img-container img {
+            width: 100%;
+            max-height: 540px;
+            object-fit: cover;
+            object-position: center 15%;
+            transform: scale(1.02);
+            transition: transform 0.6s ease;
+        }
+
+        .hero-main-img-container:hover img {
+            transform: scale(1.06);
+        }
+
+        .hero-floating-badge {
+            position: absolute;
+            bottom: 20px;
+            right: -15px;
+            background: rgba(28, 24, 22, 0.92);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(229, 130, 141, 0.4);
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero-floating-badge .script-text {
+            color: var(--primary-pink);
+            font-size: 26px;
+            line-height: 1.1;
+        }
+
+        .hero-floating-badge .sub {
+            font-size: 10px;
+            color: #d1c8c4;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* ========================================================
+           2. VÍDEO + LINK HOTMART
+           ======================================================== */
+        .video-section {
+            background-color: var(--bg-light);
+            padding: 85px 0;
+            position: relative;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .video-player-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background-color: #000;
+            aspect-ratio: 16 / 9;
+            cursor: pointer;
+            border: 3px solid #ffffff;
+        }
+
+        .video-player-card iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .video-player-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .video-player-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .video-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(229, 130, 141, 0.9);
+            backdrop-filter: blur(8px);
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 22px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .video-player-card:hover .video-play-button {
+            transform: translate(-50%, -50%) scale(1.12);
+            background: var(--primary-pink);
+        }
+
+        .video-handwrite-tag {
+            position: absolute;
+            top: -24px;
+            left: 10px;
+            color: var(--primary-pink);
+            font-size: 26px;
+            transform: rotate(-4deg);
+            z-index: 5;
+            font-weight: 700;
+        }
+
+        .video-info {
+            padding-left: 10px;
+        }
+
+        .section-tag {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--primary-pink);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .video-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+
+        .video-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        /* Hotmart link card */
+        .hotmart-box {
+            background: linear-gradient(135deg, #FFF4F3 0%, #FAECE9 100%);
+            border: 2px dashed rgba(229, 130, 141, 0.6);
+            border-radius: var(--radius-md);
+            padding: 20px 22px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hotmart-box-label {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #221F1E;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hotmart-box-label span.badge-auto {
+            background: var(--primary-pink);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .hotmart-input-group {
+            display: flex;
+            background: #ffffff;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid #e5cac7;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .hotmart-input-group input {
+            flex: 1;
+            border: none;
+            padding: 12px 16px;
+            font-size: 13px;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            outline: none;
+        }
+
+        .hotmart-input-group button {
+            background: var(--primary-pink);
+            border: none;
+            padding: 0 18px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+
+        .hotmart-input-group button:hover {
+            background: var(--primary-pink-hover);
+        }
+
+        /* ========================================================
+           3. FOTOS DAS TURMAS
+           ======================================================== */
+        .turmas-section {
+            background-color: var(--bg-cream);
+            padding: 85px 0;
+        }
+
+        .turmas-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 35px;
+        }
+
+        .section-heading {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .section-subheading {
+            font-size: 14px;
+            color: var(--text-muted);
+            max-width: 580px;
+            line-height: 1.6;
+        }
+
+        .header-script {
+            color: var(--primary-pink);
+            font-size: 32px;
+            font-weight: 700;
+            text-align: right;
+            transform: rotate(-3deg);
+            white-space: nowrap;
+        }
+
+        .turmas-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .turma-card {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background-color: #fff;
+            aspect-ratio: 16 / 11;
+            position: relative;
+            transition: all 0.35s ease;
+            border: 3px solid #ffffff;
+        }
+
+        .turma-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .turma-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .turma-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .turma-overlay-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 16px 12px;
+            background: linear-gradient(transparent, rgba(20, 17, 16, 0.85));
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ========================================================
+           4. O QUE VOCÊ VAI APRENDER
+           ======================================================== */
+        .aprender-section {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            padding: 95px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aprender-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .aprender-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .aprender-list li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 15px;
+            color: #f0eae7;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px 18px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.25s;
+        }
+
+        .aprender-list li:hover {
+            background: rgba(229, 130, 141, 0.1);
+            border-color: rgba(229, 130, 141, 0.3);
+            transform: translateX(6px);
+        }
+
+        .check-pill {
+            width: 26px;
+            height: 26px;
+            background-color: var(--primary-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1514;
+            font-size: 12px;
+            flex-shrink: 0;
+            font-weight: 900;
+        }
+
+        .aprender-visuals {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            position: relative;
+        }
+
+        .aprender-img-box {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 9 / 14;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+
+        .aprender-img-box:hover {
+            transform: scale(1.05);
+        }
+
+        .aprender-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .aprender-note {
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%) rotate(6deg);
+            color: var(--primary-pink);
+            font-size: 30px;
+            line-height: 1.1;
+            text-align: center;
+            white-space: nowrap;
+            z-index: 5;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        /* ========================================================
+           5. DEPOIMENTOS
+           ======================================================== */
+        .depoimentos-section {
+            background-color: var(--bg-light);
+            padding: 85px 0;
+        }
+
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .depoimento-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 32px 26px 26px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #f0e6e1;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.35s ease;
+            position: relative;
+        }
+
+        .depoimento-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(229, 130, 141, 0.4);
+        }
+
+        .depoimento-avatar {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            margin-bottom: 16px;
+            border: 3px solid var(--primary-pink);
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(229, 130, 141, 0.3);
+        }
+
+        .depoimento-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .depoimento-text {
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: #4a4442;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            font-style: italic;
+        }
+
+        .depoimento-author {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .depoimento-stars {
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        /* ========================================================
+           6. BÔNUS EXCLUSIVOS
+           ======================================================== */
+        .bonus-section {
+            background-color: var(--bg-cream);
+            padding: 85px 0;
+            position: relative;
+        }
+
+        .bonus-header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        .bonus-title-group {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .bonus-gift-icon-box {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-pink);
+            color: #1a1514;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .bonus-card {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            padding: 24px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(229, 130, 141, 0.2);
+            transition: all 0.3s;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-pink);
+        }
+
+        .bonus-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .bonus-icon {
+            font-size: 26px;
+            color: var(--primary-pink);
+        }
+
+        .bonus-tag {
+            font-size: 10px;
+            font-weight: 800;
+            background: #FDF2F0;
+            color: var(--primary-pink);
+            padding: 3px 8px;
+            border-radius: 12px;
+        }
+
+        .bonus-card h4 {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .bonus-card p {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ========================================================
+           7. INVESTIMENTO / OFERTA
+           ======================================================== */
+        .oferta-section {
+            background: linear-gradient(135deg, #181413 0%, #201a18 100%);
+            color: #ffffff;
+            padding: 95px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oferta-card-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 50px;
+            align-items: center;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        .price-highlight-card {
+            background: linear-gradient(145deg, #FAECE9 0%, #F5D9D4 100%);
+            color: #1a1514;
+            border-radius: var(--radius-lg);
+            padding: 36px 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border: 2px solid #ffffff;
+        }
+
+        .price-label {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #4a3e3c;
+            margin-bottom: 4px;
+        }
+
+        .price-access {
+            font-size: 12px;
+            color: #6b5c59;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .price-number {
+            font-size: 46px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 6px;
+            color: #1a1514;
+            letter-spacing: -1px;
+        }
+
+        .price-number small {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .price-installment {
+            font-size: 14px;
+            font-weight: 700;
+            color: #4a3e3c;
+            background: rgba(255,255,255,0.6);
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
+            margin-top: 4px;
+        }
+
+        .oferta-info-side h2 {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .oferta-info-side p {
+            font-size: 14.5px;
+            color: #d1c8c4;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .guarantee-pill {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 24px;
+            padding: 12px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12.5px;
+            color: #d8d0cc;
+        }
+
+        .guarantee-pill i {
+            font-size: 22px;
+            color: var(--primary-pink);
+        }
+
+        /* ========================================================
+           8. PERGUNTAS FREQUENTES (FAQ)
+           ======================================================== */
+        .faq-section {
+            background-color: var(--bg-light);
+            padding: 85px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            border: 1px solid #eee1dc;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .faq-item.active {
+            border-color: var(--primary-pink);
+            box-shadow: 0 6px 20px rgba(229, 130, 141, 0.15);
+        }
+
+        .faq-question {
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-toggle-icon {
+            font-size: 18px;
+            color: var(--primary-pink);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-weight: 700;
+        }
+
+        .faq-item.active .faq-toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: var(--text-muted);
+            padding: 0 22px;
+            background-color: #fdfaf9;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 150px;
+            padding: 6px 22px 20px;
+        }
+
+        .faq-visual-side {
+            position: relative;
+            text-align: center;
+        }
+
+        .faq-img-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid #ffffff;
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        .faq-note-badge {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            color: var(--primary-pink);
+            font-size: 32px;
+            font-weight: 700;
+            transform: rotate(-6deg);
+            white-space: nowrap;
+        }
+
+        /* ========================================================
+           9. RODAPÉ FINAL DE CONVERSÃO
+           ======================================================== */
+        .footer-cta {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            padding: 45px 0;
+            border-top: 3px solid var(--primary-pink);
+        }
+
+        .footer-cta-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-brand h3 {
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .footer-brand h3 span {
+            color: var(--primary-pink);
+        }
+
+        .footer-quote {
+            font-size: 13px;
+            color: #d1c8c4;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* FLOATING WHATSAPP */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 30px;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
+            z-index: 999;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-fixed:hover {
+            transform: scale(1.1);
+        }
+
+        /* ========================================================
+           RESPONSIVIDADE
+           ======================================================== */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .hero-features {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 450px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            .turmas-grid {
+                grid-template-columns: 1fr;
+            }
+            .aprender-grid {
+                grid-template-columns: 1fr;
+            }
+            .depoimentos-grid {
+                grid-template-columns: 1fr;
+            }
+            .bonus-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .oferta-card-box {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-cta-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            .hero-title .title-script {
+                font-size: 60px;
+            }
+            .btn-cta {
+                width: 100%;
+                font-size: 13px;
+                padding: 15px 20px;
+            }
+            .bonus-grid {
+                grid-template-columns: 1fr;
+            }
+            .top-notice-bar {
+                font-size: 11px;
+            }
+        }
+    
+        /* ===== HERO DUO: BOLO + NATÁLIA PULSANTE ===== */
+        .hero-duo-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 16px;
+            position: relative;
+            width: 100%;
+            max-width: 540px;
+        }
+
+        .hero-cake-card {
+            flex: 1;
+            max-width: 255px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.65);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            background-color: #1a1514;
+            transition: transform 0.4s ease;
+        }
+
+        .hero-cake-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-cake-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            object-position: center 20%;
+            display: block;
+        }
+
+        .hero-cake-badge {
+            position: absolute;
+            bottom: 12px;
+            left: 10px;
+            right: 10px;
+            background: rgba(28, 24, 22, 0.94);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 130, 141, 0.4);
+            border-radius: var(--radius-sm);
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        .hero-cake-badge .script-text {
+            color: var(--primary-pink);
+            font-size: 18px;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .hero-cake-badge small {
+            font-size: 9px;
+            color: #d1c8c4;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* NATÁLIA PULSANDO */
+        .hero-nati-pulsing {
+            flex: 1;
+            max-width: 255px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nati-pulse-aura {
+            position: absolute;
+            width: 110%;
+            height: 110%;
+            background: radial-gradient(circle, rgba(229, 130, 141, 0.5) 0%, rgba(242, 147, 157, 0.2) 50%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(25px);
+            animation: pulseAuraGlow 3s ease-in-out infinite alternate;
+            z-index: 1;
+        }
+
+        .hero-nati-img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-height: 420px;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.7));
+            animation: natiBreathingPulse 3.5s ease-in-out infinite;
+        }
+
+        .nati-floating-pill {
+            position: absolute;
+            top: 20px;
+            right: -5px;
+            background: rgba(28, 24, 22, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--primary-pink);
+            border-radius: 30px;
+            padding: 6px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+            z-index: 5;
+            animation: floatPill 3s ease-in-out infinite;
+        }
+
+        @keyframes natiBreathingPulse {
+            0%, 100% {
+                transform: scale(1) translateY(0);
+                filter: drop-shadow(0 15px 25px rgba(0,0,0,0.65)) drop-shadow(0 0 12px rgba(229, 130, 141, 0.35));
+            }
+            50% {
+                transform: scale(1.04) translateY(-8px);
+                filter: drop-shadow(0 22px 35px rgba(0,0,0,0.85)) drop-shadow(0 0 25px rgba(229, 130, 141, 0.65));
+            }
+        }
+
+        @keyframes pulseAuraGlow {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1.1);
+                opacity: 0.95;
+            }
+        }
+
+        @keyframes floatPill {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-duo-container {
+                flex-direction: row;
+                gap: 10px;
+            }
+            .hero-cake-img {
+                height: 280px;
+            }
+            .hero-nati-img {
+                max-height: 300px;
+            }
+        }
+    
+        /* ===== TURMAS CAROUSEL STYLING ===== */
+        .turmas-carousel-wrapper {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .turmas-carousel-track-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            padding: 10px 0 20px;
+        }
+
+        .turmas-carousel-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
+        }
+
+        .turma-slide {
+            flex: 0 0 calc((100% - 40px) / 3);
+            min-width: 0;
+            box-sizing: border-box;
+        }
+
+        .turma-slide .turma-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background-color: #1a1514;
+            aspect-ratio: 16 / 11;
+            position: relative;
+            transition: all 0.35s ease;
+            border: 3px solid #ffffff;
+            width: 100%;
+        }
+
+        .turma-slide .turma-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 35px rgba(229, 130, 141, 0.25);
+            border-color: var(--primary-pink);
+        }
+
+        .turma-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .turma-slide .turma-card:hover .turma-img {
+            transform: scale(1.08);
+        }
+
+        .turma-overlay-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px 18px 14px;
+            background: linear-gradient(transparent, rgba(20, 17, 16, 0.9));
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .turma-overlay-info strong {
+            font-size: 13px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .turma-overlay-info span {
+            font-size: 11px;
+            color: var(--primary-pink);
+            font-weight: 600;
+        }
+
+        /* NAVIGATION BUTTONS */
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            background: rgba(28, 24, 22, 0.95);
+            border: 2px solid var(--primary-pink);
+            border-radius: 50%;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            font-size: 16px;
+        }
+
+        .carousel-nav-btn:hover {
+            background: var(--primary-pink);
+            color: #1a1514;
+            transform: translateY(-50%) scale(1.12);
+        }
+
+        .carousel-nav-btn.prev {
+            left: -22px;
+        }
+
+        .carousel-nav-btn.next {
+            right: -22px;
+        }
+
+        /* DOTS */
+        .carousel-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d4c8c4;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .carousel-dot.active {
+            width: 28px;
+            border-radius: 10px;
+            background: var(--primary-pink);
+            box-shadow: 0 2px 8px rgba(229, 130, 141, 0.5);
+        }
+
+        @media (max-width: 992px) {
+            .turma-slide {
+                flex: 0 0 calc((100% - 20px) / 2);
+            }
+            .carousel-nav-btn.prev { left: -10px; }
+            .carousel-nav-btn.next { right: -10px; }
+        }
+
+        @media (max-width: 600px) {
+            .turma-slide {
+                flex: 0 0 100%;
+            }
+            .carousel-nav-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 13px;
+            }
+        }
+    
+        /* ===== DEPOIMENTOS PRINTS CAROUSEL ===== */
+        .depoimentos-carousel-wrapper {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .depo-carousel-track-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 10px 0 20px;
+        }
+
+        .depo-carousel-track {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
+        }
+
+        .depo-slide {
+            flex: 0 0 calc((100% - 48px) / 3);
+            min-width: 0;
+            box-sizing: border-box;
+        }
+
+        .depo-print-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 18px 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            border: 2px solid #f0e6e1;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            height: 100%;
+            transition: all 0.35s ease;
+        }
+
+        .depo-print-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(229, 130, 141, 0.2);
+            border-color: var(--primary-pink);
+        }
+
+        .depo-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .depo-whatsapp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #25D366;
+            background: rgba(37, 211, 102, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .depo-instagram-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #E1306C;
+            background: rgba(225, 48, 108, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .depo-img-frame {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: #111;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+            height: 380px;
+        }
+
+        .depo-print-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .depo-print-card:hover .depo-print-img {
+            transform: scale(1.03);
+        }
+
+        .depo-card-footer {
+            padding: 4px 6px;
+        }
+
+        .depo-highlight-quote {
+            font-size: 12.5px;
+            color: #333333;
+            line-height: 1.5;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        @media (max-width: 992px) {
+            .depo-slide {
+                flex: 0 0 calc((100% - 24px) / 2);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .depo-slide {
+                flex: 0 0 100%;
+            }
+            .depo-img-frame {
+                height: 340px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP NOTICE BAR -->
+    <div class="top-notice-bar">
+        <span class="badge">Vagas Abertas</span>
+        <span>🔥 Método do 0 à Confeiteira com Natália Duarte • Garanta seu acesso vitalício</span>
+    </div>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/5500000000000" target="_blank" class="whatsapp-fixed" title="Fale no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ========================================================
+         1. HERO SECTION
+         ======================================================== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-tag">CURSO ONLINE</span>
+                    <h1 class="hero-title">
+                        Método Do 0 à
+                        <span class="title-script">Confeiteira</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Aprenda do zero, no seu ritmo, e transforme sua paixão por doces em uma fonte de renda real e altamente lucrativa com o método testado da Nati Duarte.
+                    </p>
+
+                    <div class="hero-features">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-play-circle"></i></div>
+                            <span>Aulas práticas e diretas</span>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                            <span>Suporte exclusivo</span>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                            <span>Certificado oficial</span>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-infinity"></i></div>
+                            <span>Acesso vitalício</span>
+                        </div>
+                    </div>
+
+                    <a href="https://pay.hotmart.com/G96769709R" target="_blank" class="btn-cta cta-action-btn">
+                        QUERO GARANTIR MINHA VAGA
+                        <span class="circle-icon"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <br>
+                    <div class="hotmart-badge">
+                        <i class="fas fa-shield-alt"></i> Compra 100% segura pela Hotmart
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper">
+                    <div class="hero-main-img-container">
+                        <img src="assets/nati_foto.jpg" alt="Natália Duarte - Confeiteira" class="hero-main-img">
+                    </div>
+                    <div class="hero-floating-badge">
+                        <div class="script-text cursive">Sonhe, confeite, conquiste! ♡</div>
+                        <div class="sub">Natália Duarte Ateliê</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         2. VÍDEO INSTITUCIONAL + LINK DA HOTMART
+         ======================================================== -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-grid">
+                <div style="position: relative;">
+                    <div class="video-handwrite-tag cursive">Assista ao vídeo institucional ⤵</div>
+                    <div class="video-player-card" id="videoBox">
+                        <iframe src="https://www.youtube.com/embed/tJhKkzwLwEo?rel=0" title="Vídeo Institucional - Nati Duarte | Método Do 0 à Confeiteira" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; height: 100%; border: none; display: block;"></iframe>
+                    </div>
+                </div>
+                </div>
+
+                <div class="video-info">
+                    <span class="section-tag">SEJA BEM-VINDA!</span>
+                    <h2 class="video-title">Um curso completo para você se tornar uma confeiteira de sucesso!</h2>
+                    <p class="video-desc">
+                        Aqui você vai aprender técnicas reais, do básico ao avançado, com um método simples, prático e direto ao ponto. Não importa se você nunca fez um doce antes, esse curso foi feito para você!
+                    </p>
+
+                    <!-- CAIXA DE LINK DA HOTMART -->
+                    <div class="hotmart-box" id="link-hotmart">
+                        <div class="hotmart-box-label">
+                            <span><i class="fas fa-link"></i> Link da Hotmart (Coloque aqui seu link)</span>
+                            <span class="badge-auto">Sincronizado</span>
+                        </div>
+                        <div class="hotmart-input-group">
+                            <input type="text" id="hotmartUrlInput" placeholder="https://pay.hotmart.com/G96769709R" value="https://pay.hotmart.com/G96769709R">
+                            <button type="button" onclick="copyHotmartLink()" title="Copiar Link">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         3. FOTOS DAS TURMAS
+         ======================================================== -->
+    <section class="turmas-section">
+        <div class="container">
+            <div class="turmas-header">
+                <div>
+                    <h2 class="section-heading">Veja algumas das nossas turmas</h2>
+                    <p class="section-subheading">Alunas reais, resultados reais! Confira como é a experiência de quem já fez o curso e está conquistando o seu espaço na confeitaria.</p>
+                </div>
+                <div class="header-script cursive">Fotos das turmas aqui ⤹</div>
+            </div>
+
+            <!-- CARROSSEL DE TURMAS -->
+            <div class="turmas-carousel-wrapper">
+                <button class="carousel-nav-btn prev" onclick="moveCarousel(-1)" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="turmas-carousel-track-container" id="carouselTrackContainer">
+                    <div class="turmas-carousel-track" id="carouselTrack">
+                        <!-- SLIDE 1 -->
+                        <div class="turma-slide">
+                            <div class="turma-card">
+                                <img src="assets/turma_real_7.jpg" alt="Turma completa com bolos confeitados" class="turma-img">
+                                <div class="turma-overlay-info">
+                                    <strong>Turma Formada com Sucesso</strong>
+                                    <span>Alunas exibindo seus bolos confeitados</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2 -->
+                        <div class="turma-slide">
+                            <div class="turma-card">
+                                <img src="assets/turma_real_8.jpg" alt="Turma Bolos Temáticos" class="turma-img">
+                                <div class="turma-overlay-info">
+                                    <strong>Bolos Temáticos & Criativos</strong>
+                                    <span>Técnicas de texturas, bicos e acabamentos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3 -->
+                        <div class="turma-slide">
+                            <div class="turma-card">
+                                <img src="assets/turma_real_6.jpg" alt="Mentoria individual de bicos de confeitar com Nati Duarte" class="turma-img">
+                                <div class="turma-overlay-info">
+                                    <strong>Mentoria Prática & Direta</strong>
+                                    <span>Nati ensinando cada movimento de bico</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 4 -->
+                        <div class="turma-slide">
+                            <div class="turma-card">
+                                <img src="assets/turma_real_9.jpg" alt="Turma de avental oficial Natália Duarte Ateliê" class="turma-img">
+                                <div class="turma-overlay-info">
+                                    <strong>Ateliê Natália Duarte</strong>
+                                    <span>Comunidade e transformação profissional</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 5 -->
+                        <div class="turma-slide">
+                            <div class="turma-card">
+                                <img src="assets/turma_real_1.jpg" alt="Alunas formadas com mini batedeiras" class="turma-img">
+                                <div class="turma-overlay-info">
+                                    <strong>Conquista & Realização</strong>
+                                    <span>Alunas orgulhosas dos seus primeiros bolos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 6 -->
+                        <div class="turma-slide">
+                            <div class="turma-card">
+                                <img src="assets/turma_real_3.jpg" alt="Alunas e alunos do Método Do 0 à Confeiteira" class="turma-img">
+                                <div class="turma-overlay-info">
+                                    <strong>Método Do 0 à Confeiteira</strong>
+                                    <span>Resultados reais de quem começou do zero</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 7 -->
+                        <div class="turma-slide">
+                            <div class="turma-card">
+                                <img src="assets/turma_real_4.jpg" alt="Aluna praticando técnicas de bicos de confeitar" class="turma-img">
+                                <div class="turma-overlay-info">
+                                    <strong>Prática Mão na Massa</strong>
+                                    <span>Treinamento de rosetas e detalhes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 8 -->
+                        <div class="turma-slide">
+                            <div class="turma-card">
+                                <img src="assets/turma_real_5.jpg" alt="Alunas montando massas e recheios na bancada" class="turma-img">
+                                <div class="turma-overlay-info">
+                                    <strong>Massas & Recheios Estruturados</strong>
+                                    <span>Montagem segura de bolos altos e firmes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 9 -->
+                        <div class="turma-slide">
+                            <div class="turma-card">
+                                <img src="assets/turma_real_2.jpg" alt="Turma reunida na mesa com bolos temáticos" class="turma-img">
+                                <div class="turma-overlay-info">
+                                    <strong>Domínio de Cores & Decorações</strong>
+                                    <span>Técnicas modernas para vender mais</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-btn next" onclick="moveCarousel(1)" aria-label="Próximo">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- CAROUSEL DOTS INDICATORS -->
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         4. O QUE VOCÊ VAI APRENDER
+         ======================================================== -->
+    <section class="aprender-section">
+        <div class="container">
+            <div class="aprender-grid">
+                <div>
+                    <span class="section-tag">GRADE COMPLETA</span>
+                    <h2 class="section-heading" style="color: #fff;">O que você vai aprender</h2>
+                    <ul class="aprender-list">
+                        <li>
+                            <span class="check-pill"><i class="fas fa-check"></i></span>
+                            <span>Recheios e coberturas perfeitos que não vazam</span>
+                        </li>
+                        <li>
+                            <span class="check-pill"><i class="fas fa-check"></i></span>
+                            <span>Técnicas de decoração (do básico ao avançado)</span>
+                        </li>
+                        <li>
+                            <span class="check-pill"><i class="fas fa-check"></i></span>
+                            <span>Bolos no pote, doces finos e sobremesas lucrativas</span>
+                        </li>
+                        <li>
+                            <span class="check-pill"><i class="fas fa-check"></i></span>
+                            <span>Gestão e precificação para lucrar de verdade</span>
+                        </li>
+                        <li>
+                            <span class="check-pill"><i class="fas fa-check"></i></span>
+                            <span>Receitas testadas, aprovadas e padronizadas</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="aprender-visuals">
+                    <div class="aprender-img-box">
+                        <img src="assets/bolo_real_1.jpg" alt="Bolo Decorado Tronco e Capivaras">
+                    </div>
+                    <div class="aprender-img-box">
+                        <img src="assets/bolo_real_2.jpg" alt="Bolo de Casamento 2 Andares com Orquídeas">
+                    </div>
+                    <div class="aprender-img-box">
+                        <img src="assets/bolo_real_3.jpg" alt="Bolo 3 Andares Turma da Mônica Melancia">
+                    </div>
+                    <div class="aprender-note cursive">
+                        Receitas deliciosas<br>e lucrativas! ♡
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         5. DEPOIMENTOS
+         ======================================================== -->
+    <section class="depoimentos-section">
+        <div class="container">
+            <div style="text-align: center; max-width: 620px; margin: 0 auto 35px;">
+                <span class="section-tag">HISTÓRIAS REAIS DE SUCESSO</span>
+                <h2 class="section-heading">Depoimentos de quem já fez</h2>
+                <p class="section-subheading" style="margin: 0 auto;">Prints e mensagens reais de alunas que transformaram sua paixão por doces em renda e realização profissional:</p>
+            </div>
+
+            <!-- CARROSSEL DE DEPOIMENTOS -->
+            <div class="depoimentos-carousel-wrapper">
+                <button class="carousel-nav-btn prev" onclick="moveDepoCarousel(-1)" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="depo-carousel-track-container" id="depoTrackContainer">
+                    <div class="depo-carousel-track" id="depoTrack">
+                        <!-- DEPOIMENTO 1 -->
+                        <div class="depo-slide">
+                            <div class="depo-print-card">
+                                <div class="depo-card-header">
+                                    <span class="depo-whatsapp-badge"><i class="fab fa-whatsapp"></i> Mensagem no WhatsApp</span>
+                                    <div class="depoimento-stars">★★★★★</div>
+                                </div>
+                                <div class="depo-img-frame">
+                                    <img src="assets/depoimento_real_1.jpg" alt="Depoimento de aluna sobre o Método do Zero a Confeiteira" class="depo-print-img">
+                                </div>
+                                <div class="depo-card-footer">
+                                    <p class="depo-highlight-quote">"O curso foi um divisor de águas! Hoje sem medo não rejeito nenhuma encomenda..."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 2 -->
+                        <div class="depo-slide">
+                            <div class="depo-print-card">
+                                <div class="depo-card-header">
+                                    <span class="depo-whatsapp-badge"><i class="fab fa-whatsapp"></i> Mensagem no WhatsApp</span>
+                                    <div class="depoimento-stars">★★★★★</div>
+                                </div>
+                                <div class="depo-img-frame">
+                                    <img src="assets/depoimento_real_2.jpg" alt="Depoimento elogiando dedicação e paciência da Nati" class="depo-print-img">
+                                </div>
+                                <div class="depo-card-footer">
+                                    <p class="depo-highlight-quote">"Obrigada por nos ajudar nesse início de um lindo mundo da confeitaria..."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 3 -->
+                        <div class="depo-slide">
+                            <div class="depo-print-card">
+                                <div class="depo-card-header">
+                                    <span class="depo-instagram-badge"><i class="fab fa-instagram"></i> Direct do Instagram</span>
+                                    <div class="depoimento-stars">★★★★★</div>
+                                </div>
+                                <div class="depo-img-frame">
+                                    <img src="assets/depoimento_real_3.jpg" alt="Depoimento no Instagram: Melhor curso do mundo" class="depo-print-img">
+                                </div>
+                                <div class="depo-card-footer">
+                                    <p class="depo-highlight-quote">"Esse curso é pra iniciantes e é o melhor do mundo! Você mudou minha vida..."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DEPOIMENTO 4 -->
+                        <div class="depo-slide">
+                            <div class="depo-print-card">
+                                <div class="depo-card-header">
+                                    <span class="depo-whatsapp-badge"><i class="fab fa-whatsapp"></i> WhatsApp + Fotos do Bolo</span>
+                                    <div class="depoimento-stars">★★★★★</div>
+                                </div>
+                                <div class="depo-img-frame">
+                                    <img src="assets/depoimento_real_4.jpg" alt="Depoimento com fotos de bolos e suporte nota 1000" class="depo-print-img">
+                                </div>
+                                <div class="depo-card-footer">
+                                    <p class="depo-highlight-quote">"Me sentindo confiante! Antes passava 3h pra cobrir um bolo, agora menos de 1h... Suporte 1000!"</p>
+                                </div>
+                            </div>
+                        </div>
+                                            <!-- DEPOIMENTO 5: Transformação e Mudança de Mentalidade -->
+                        <div class="depo-slide">
+                            <div class="depo-print-card">
+                                <div class="depo-card-header">
+                                    <span class="depo-whatsapp-badge"><i class="fab fa-whatsapp"></i> História de Sucesso</span>
+                                    <div class="depoimento-stars">★★★★★</div>
+                                </div>
+                                <div class="depo-img-frame">
+                                    <img src="assets/depoimento_real_5.jpg" alt="Depoimento sobre mudança de mentalidade e renda com bolos" class="depo-print-img">
+                                </div>
+                                <div class="depo-card-footer">
+                                    <p class="depo-highlight-quote">"Em dois dias de curso minha mentalidade mudou! Hoje tiro uma renda muito boa apenas com os bolos..."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-btn next" onclick="moveDepoCarousel(1)" aria-label="Próximo">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- DOTS INDICATORS -->
+            <div class="carousel-dots" id="depoDots"></div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         6. BÔNUS EXCLUSIVOS
+         ======================================================== -->
+    <section class="bonus-section">
+        <div class="container">
+            <div class="bonus-header-wrapper">
+                <div class="bonus-title-group">
+                    <div class="bonus-gift-icon-box"><i class="fas fa-gift"></i></div>
+                    <div>
+                        <h2 class="section-heading" style="margin-bottom: 2px;">Bônus exclusivos</h2>
+                        <p class="section-subheading">Além de todo o conteúdo do curso, você ainda leva gratuitamente:</p>
+                    </div>
+                </div>
+                <div class="header-script cursive">Tudo para começar com o pé direito! ♡</div>
+            </div>
+
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="bonus-card-top">
+                        <div class="bonus-icon"><i class="fas fa-book-open"></i></div>
+                        <span class="bonus-tag">GRÁTIS</span>
+                    </div>
+                    <h4>E-book de receitas extras</h4>
+                    <p>Guia com receitas secretas para aumentar o cardápio e encantar clientes.</p>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-card-top">
+                        <div class="bonus-icon"><i class="fas fa-calculator"></i></div>
+                        <span class="bonus-tag">GRÁTIS</span>
+                    </div>
+                    <h4>Planilha de precificação</h4>
+                    <p>Controle financeiro automático para saber exatamente sua margem de lucro.</p>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-card-top">
+                        <div class="bonus-icon"><i class="fab fa-whatsapp"></i></div>
+                        <span class="bonus-tag">GRÁTIS</span>
+                    </div>
+                    <h4>Grupo VIP no WhatsApp</h4>
+                    <p>Networking exclusivo com outras confeiteiras e troca de experiências.</p>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-card-top">
+                        <div class="bonus-icon"><i class="fas fa-headset"></i></div>
+                        <span class="bonus-tag">GRÁTIS</span>
+                    </div>
+                    <h4>Suporte com a professora</h4>
+                    <p>Canal direto para tirar dúvidas sobre massas, recheios e encomendas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         7. INVESTIMENTO / OFERTA
+         ======================================================== -->
+    <section class="oferta-section">
+        <div class="container">
+            <div class="oferta-card-box">
+                <div class="price-highlight-card">
+                    <div class="price-label">INVESTIMENTO</div>
+                    <div class="price-access">Acesso completo e vitalício</div>
+                    <div class="price-number">
+                        <small>R$</small> 497<small>,00</small>
+                    </div>
+                    <div class="price-installment">ou 12x de R$ 49,90</div>
+                </div>
+
+                <div class="oferta-info-side">
+                    <span class="section-tag" style="color: var(--primary-pink);">OFERTA POR TEMPO LIMITADO</span>
+                    <h2>Garanta agora sua vaga e comece sua transformação!</h2>
+                    <p>
+                        Não deixe seu sonho para depois. Aprenda uma profissão saborosa, valorizada e lucre no conforto da sua cozinha com o suporte de quem já trilhou esse caminho.
+                    </p>
+
+                    <a href="https://pay.hotmart.com/G96769709R" target="_blank" class="btn-cta cta-action-btn">
+                        QUERO GARANTIR MINHA VAGA
+                        <span class="circle-icon"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <div class="guarantee-pill">
+                        <i class="fas fa-shield-alt"></i>
+                        <span><strong>Garantia incondicional de 7 dias:</strong> Teste o método sem riscos. Devolução de 100% do valor caso não se encante.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         8. PERGUNTAS FREQUENTES (FAQ)
+         ======================================================== -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-grid">
+                <div>
+                    <span class="section-tag">TIRE SUAS DÚVIDAS</span>
+                    <h2 class="section-heading">Perguntas frequentes</h2>
+
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAccordion(this)">
+                                <span>Por quanto tempo terei acesso ao curso?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                O seu acesso é vitalício! Você pode assistir e rever todas as aulas no seu próprio ritmo, quantas vezes desejar, para sempre.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAccordion(this)">
+                                <span>O curso é 100% online?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Sim, totalmente online. Você pode assistir em qualquer dispositivo (celular, tablet ou computador), a qualquer horário do dia.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAccordion(this)">
+                                <span>Preciso ter experiência na cozinha?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Não! O método foi estruturado do zero ao avançado, passo a passo, pensado especialmente tanto para quem nunca fez um bolo quanto para quem quer se profissionalizar.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAccordion(this)">
+                                <span>Como funciona o suporte para dúvidas?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Você terá suporte exclusivo da equipe e da Nati Duarte, além de acesso ao grupo VIP no WhatsApp para trocar experiências e tirar dúvidas.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleAccordion(this)">
+                                <span>Vou receber certificado de conclusão?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Sim! Ao concluir o curso você emite o seu certificado profissional com seu nome para comprovar sua qualificação na confeitaria.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-visual-side">
+                    <div class="faq-note-badge cursive">Tire todas as suas dúvidas! ♡ ➔</div>
+                    <div class="faq-img-container">
+                        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&auto=format&fit=crop&q=80" alt="Cupcake gourmet decorado">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         9. RODAPÉ FINAL DE CONVERSÃO
+         ======================================================== -->
+    <footer class="footer-cta">
+        <div class="container">
+            <div class="footer-cta-flex">
+                <div class="footer-brand">
+                    <h3>Método Do 0 à<br><span>Confeiteira</span></h3>
+                    <p style="font-size: 11px; color: #a09996; margin-top: 4px;">© 2026 Natália Duarte Ateliê • Todos os direitos reservados</p>
+                </div>
+
+                <div class="footer-quote">
+                    Não adie o seu sonho. Aprenda, evolua e transforme sua paixão em lucro!
+                </div>
+
+                <div>
+                    <a href="https://pay.hotmart.com/G96769709R" target="_blank" class="btn-cta cta-action-btn">
+                        QUERO GARANTIR MINHA VAGA
+                        <span class="circle-icon"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT INTERATIVO -->
+    <script>
+        // 1. FAQ Accordion
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            const wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // 2. Hotmart Link Synchronizer
+        const hotmartInput = document.getElementById('hotmartUrlInput');
+        
+        function updateCtaLinks(url) {
+            const cleanUrl = url.trim();
+            document.querySelectorAll('.cta-action-btn').forEach(btn => {
+                if (cleanUrl && cleanUrl.startsWith('http')) {
+                    btn.href = cleanUrl;
+                    btn.target = '_blank';
+                } else {
+                    btn.href = '#link-hotmart';
+                    btn.target = '_self';
+                }
+            });
+        }
+
+        let savedUrl = localStorage.getItem('nati_hotmart_url') || 'https://pay.hotmart.com/G96769709R';
+        if (savedUrl) {
+            hotmartInput.value = savedUrl;
+            updateCtaLinks(savedUrl);
+        }
+
+        hotmartInput.addEventListener('input', (e) => {
+            const val = e.target.value;
+            localStorage.setItem('nati_hotmart_url', val);
+            updateCtaLinks(val);
+        });
+
+        // 3. Copy Link function
+        function copyHotmartLink() {
+            hotmartInput.select();
+            navigator.clipboard.writeText(hotmartInput.value).then(() => {
+                alert('Link da Hotmart copiado com sucesso!');
+            });
+        }
+
+        // 4. Play video
+        function playVideo() {
+            const videoUrl = prompt('Insira o link embed do seu vídeo (YouTube/Vimeo):', 'https://www.youtube.com/embed/dQw4w9WgXcQ');
+            if (videoUrl) {
+                const box = document.getElementById('videoBox');
+                box.innerHTML = '<iframe width="100%" height="100%" src="' + videoUrl + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            }
+        }
+    
+        // ===== CAROUSEL LOGIC =====
+        let currentSlideIndex = 0;
+        let visibleSlides = getVisibleSlides();
+        const track = document.getElementById('carouselTrack');
+        const slides = document.querySelectorAll('.turma-slide');
+        const dotsContainer = document.getElementById('carouselDots');
+        let totalSlides = slides.length;
+        let autoPlayTimer = null;
+
+        function getVisibleSlides() {
+            if (window.innerWidth <= 600) return 1;
+            if (window.innerWidth <= 992) return 2;
+            return 3;
+        }
+
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            const maxIndex = Math.max(0, totalSlides - visibleSlides);
+            for (let i = 0; i <= maxIndex; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot' + (i === currentSlideIndex ? ' active' : '');
+                dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateCarousel() {
+            visibleSlides = getVisibleSlides();
+            const maxIndex = Math.max(0, totalSlides - visibleSlides);
+            if (currentSlideIndex > maxIndex) currentSlideIndex = maxIndex;
+
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            const gap = 20;
+            const moveAmount = currentSlideIndex * (slideWidth + gap);
+            track.style.transform = 'translateX(-' + moveAmount + 'px)';
+
+            // Update dots
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentSlideIndex);
+            });
+        }
+
+        function moveCarousel(direction) {
+            visibleSlides = getVisibleSlides();
+            const maxIndex = Math.max(0, totalSlides - visibleSlides);
+            currentSlideIndex += direction;
+            if (currentSlideIndex > maxIndex) currentSlideIndex = 0;
+            if (currentSlideIndex < 0) currentSlideIndex = maxIndex;
+            updateCarousel();
+            resetAutoPlay();
+        }
+
+        function goToSlide(index) {
+            currentSlideIndex = index;
+            updateCarousel();
+            resetAutoPlay();
+        }
+
+        function startAutoPlay() {
+            autoPlayTimer = setInterval(() => {
+                moveCarousel(1);
+            }, 4000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayTimer);
+            startAutoPlay();
+        }
+
+        window.addEventListener('resize', () => {
+            createDots();
+            updateCarousel();
+        });
+
+        // Touch swipe support
+        let startX = 0;
+        let endX = 0;
+        const trackContainer = document.getElementById('carouselTrackContainer');
+
+        trackContainer.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        trackContainer.addEventListener('touchend', e => {
+            endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) moveCarousel(1);
+            if (endX - startX > 50) moveCarousel(-1);
+        }, { passive: true });
+
+        // Init
+        createDots();
+        updateCarousel();
+        startAutoPlay();
+    
+        // ===== DEPOIMENTOS CAROUSEL LOGIC =====
+        let currentDepoIndex = 0;
+        let visibleDepoSlides = getVisibleDepoSlides();
+        const depoTrack = document.getElementById('depoTrack');
+        const depoSlides = document.querySelectorAll('.depo-slide');
+        const depoDotsContainer = document.getElementById('depoDots');
+        let totalDepoSlides = depoSlides.length;
+        let autoDepoTimer = null;
+
+        function getVisibleDepoSlides() {
+            if (window.innerWidth <= 600) return 1;
+            if (window.innerWidth <= 992) return 2;
+            return 3;
+        }
+
+        function createDepoDots() {
+            depoDotsContainer.innerHTML = '';
+            const maxIndex = Math.max(0, totalDepoSlides - visibleDepoSlides);
+            for (let i = 0; i <= maxIndex; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot' + (i === currentDepoIndex ? ' active' : '');
+                dot.setAttribute('aria-label', 'Depoimento ' + (i + 1));
+                dot.onclick = () => goToDepoSlide(i);
+                depoDotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateDepoCarousel() {
+            visibleDepoSlides = getVisibleDepoSlides();
+            const maxIndex = Math.max(0, totalDepoSlides - visibleDepoSlides);
+            if (currentDepoIndex > maxIndex) currentDepoIndex = maxIndex;
+
+            const slideWidth = depoSlides[0].getBoundingClientRect().width;
+            const gap = 24;
+            const moveAmount = currentDepoIndex * (slideWidth + gap);
+            depoTrack.style.transform = 'translateX(-' + moveAmount + 'px)';
+
+            const dots = depoDotsContainer.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentDepoIndex);
+            });
+        }
+
+        function moveDepoCarousel(direction) {
+            visibleDepoSlides = getVisibleDepoSlides();
+            const maxIndex = Math.max(0, totalDepoSlides - visibleDepoSlides);
+            currentDepoIndex += direction;
+            if (currentDepoIndex > maxIndex) currentDepoIndex = 0;
+            if (currentDepoIndex < 0) currentDepoIndex = maxIndex;
+            updateDepoCarousel();
+            resetAutoDepo();
+        }
+
+        function goToDepoSlide(index) {
+            currentDepoIndex = index;
+            updateDepoCarousel();
+            resetAutoDepo();
+        }
+
+        function startAutoDepo() {
+            autoDepoTimer = setInterval(() => {
+                moveDepoCarousel(1);
+            }, 5000);
+        }
+
+        function resetAutoDepo() {
+            clearInterval(autoDepoTimer);
+            startAutoDepo();
+        }
+
+        window.addEventListener('resize', () => {
+            createDepoDots();
+            updateDepoCarousel();
+        });
+
+        // Touch swipe support for Depoimentos
+        let startDepoX = 0;
+        let endDepoX = 0;
+        const depoTrackContainer = document.getElementById('depoTrackContainer');
+
+        depoTrackContainer.addEventListener('touchstart', e => {
+            startDepoX = e.touches[0].clientX;
+        }, { passive: true });
+
+        depoTrackContainer.addEventListener('touchend', e => {
+            endDepoX = e.changedTouches[0].clientX;
+            if (startDepoX - endDepoX > 50) moveDepoCarousel(1);
+            if (endDepoX - startDepoX > 50) moveDepoCarousel(-1);
+        }, { passive: true });
+
+        // Init
+        createDepoDots();
+        updateDepoCarousel();
+        startAutoDepo();
+    </script>
+</body>
+</html>
