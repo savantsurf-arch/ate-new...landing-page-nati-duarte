@@ -1121,27 +1121,150 @@
             text-align: center;
         }
 
-        /* FLOATING WHATSAPP */
-        .whatsapp-fixed {
+        /* FLOATING SOCIAL BUTTONS */
+        .social-fixed-group {
             position: fixed;
             bottom: 24px;
             right: 24px;
-            width: 58px;
-            height: 58px;
-            background: #25D366;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .social-fixed-btn {
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 26px;
             color: #ffffff;
-            font-size: 30px;
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
-            z-index: 999;
-            transition: transform 0.3s;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+            text-decoration: none;
+            position: relative;
         }
 
-        .whatsapp-fixed:hover {
-            transform: scale(1.1);
+        .social-fixed-btn.whatsapp {
+            background-color: #25D366;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+        }
+
+        .social-fixed-btn.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            box-shadow: 0 6px 20px rgba(214, 36, 159, 0.45);
+        }
+
+        .social-fixed-btn:hover {
+            transform: scale(1.12);
+        }
+
+        .social-fixed-btn .tooltip {
+            position: absolute;
+            right: 68px;
+            background: #1c1816;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateX(10px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        .social-fixed-btn:hover .tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .hero-social-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 4px 12px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #fff;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .hero-social-pill:hover {
+            transform: scale(1.05);
+            color: #fff;
+        }
+
+        .faq-contact-box {
+            margin-top: 20px;
+            padding: 16px;
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px dashed var(--primary-pink);
+        }
+        .faq-contact-box p {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .faq-whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #25D366;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+        }
+        .faq-whatsapp-btn:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
+            color: #ffffff;
+        }
+
+        .footer-social-wrapper {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+        .footer-social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            color: #ffffff;
+        }
+        .footer-social-btn.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        .footer-social-btn.whatsapp {
+            background: #25D366;
+        }
+        .footer-social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            color: #ffffff;
         }
 
         /* ========================================================
@@ -1657,10 +1780,17 @@
         <span>🔥 Método do 0 à Confeiteira com Natália Duarte • Garanta seu acesso vitalício</span>
     </div>
 
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/5500000000000" target="_blank" class="whatsapp-fixed" title="Fale no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- FLOATING SOCIAL BUTTONS -->
+    <div class="social-fixed-group">
+        <a href="https://www.instagram.com/nataliaduarteatelie/" target="_blank" class="social-fixed-btn instagram" title="Instagram @nataliaduarteatelie">
+            <i class="fab fa-instagram"></i>
+            <span class="tooltip">Siga no Instagram</span>
+        </a>
+        <a href="https://api.whatsapp.com/message/VAKBPNJBP4RYJ1?autoload=1&app_absent=0" target="_blank" class="social-fixed-btn whatsapp" title="Fale com a Nati no WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Fale no WhatsApp</span>
+        </a>
+    </div>
 
     <!-- ========================================================
          1. HERO SECTION
@@ -1714,6 +1844,9 @@
                     <div class="hero-floating-badge">
                         <div class="script-text cursive">Sonhe, confeite, conquiste! ♡</div>
                         <div class="sub">Natália Duarte Ateliê</div>
+                        <a href="https://www.instagram.com/nataliaduarteatelie/" target="_blank" class="hero-social-pill">
+                            <i class="fab fa-instagram"></i> @nataliaduarteatelie
+                        </a>
                     </div>
                 </div>
             </div>
@@ -2116,9 +2249,9 @@
                     <div class="price-label">INVESTIMENTO</div>
                     <div class="price-access">Acesso completo e vitalício</div>
                     <div class="price-number">
-                        <small>R$</small> 497<small>,00</small>
+                        <small>R$</small> 297<small>,00</small>
                     </div>
-                    <div class="price-installment">ou 12x de R$ 49,90</div>
+                    <div class="price-installment">ou 12x de R$ 30,72</div>
                 </div>
 
                 <div class="oferta-info-side">
@@ -2210,6 +2343,12 @@
                     <div class="faq-img-container">
                         <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&auto=format&fit=crop&q=80" alt="Cupcake gourmet decorado">
                     </div>
+                    <div class="faq-contact-box">
+                        <p>Ficou com alguma dúvida sobre o curso?</p>
+                        <a href="https://api.whatsapp.com/message/VAKBPNJBP4RYJ1?autoload=1&app_absent=0" target="_blank" class="faq-whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Falar com a Nati no WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2224,6 +2363,14 @@
                 <div class="footer-brand">
                     <h3>Método Do 0 à<br><span>Confeiteira</span></h3>
                     <p style="font-size: 11px; color: #a09996; margin-top: 4px;">© 2026 Natália Duarte Ateliê • Todos os direitos reservados</p>
+                    <div class="footer-social-wrapper">
+                        <a href="https://www.instagram.com/nataliaduarteatelie/" target="_blank" class="footer-social-btn instagram">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="https://api.whatsapp.com/message/VAKBPNJBP4RYJ1?autoload=1&app_absent=0" target="_blank" class="footer-social-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
                 </div>
 
                 <div class="footer-quote">
