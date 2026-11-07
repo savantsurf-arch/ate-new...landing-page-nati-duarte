@@ -1807,15 +1807,11 @@
         <span>🔥 Oferta Exclusiva de Black Friday • Método do 0 à Confeiteira por apenas R$ 247,00</span>
     </div>
 
-    <!-- FLOATING SOCIAL BUTTONS -->
+    <!-- FLOATING SOCIAL BUTTON -->
     <div class="social-fixed-group">
         <a href="https://www.instagram.com/nataliaduarteatelie/" target="_blank" class="social-fixed-btn instagram" title="Instagram @nataliaduarteatelie">
             <i class="fab fa-instagram"></i>
             <span class="tooltip">Siga no Instagram</span>
-        </a>
-        <a href="https://api.whatsapp.com/message/VAKBPNJBP4RYJ1?autoload=1&app_absent=0" target="_blank" class="social-fixed-btn whatsapp" title="Fale com a Nati no WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-            <span class="tooltip">Fale no WhatsApp</span>
         </a>
     </div>
 
@@ -2357,12 +2353,6 @@
                     <div class="faq-img-container">
                         <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&auto=format&fit=crop&q=80" alt="Cupcake gourmet decorado">
                     </div>
-                    <div class="faq-contact-box">
-                        <p>Ficou com alguma dúvida sobre o curso?</p>
-                        <a href="https://api.whatsapp.com/message/VAKBPNJBP4RYJ1?autoload=1&app_absent=0" target="_blank" class="faq-whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Falar com a Nati no WhatsApp
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -2379,10 +2369,7 @@
                     <p style="font-size: 11px; color: #a09996; margin-top: 4px;">© 2026 Natália Duarte Ateliê • Todos os direitos reservados</p>
                     <div class="footer-social-wrapper">
                         <a href="https://www.instagram.com/nataliaduarteatelie/" target="_blank" class="footer-social-btn instagram">
-                            <i class="fab fa-instagram"></i> Instagram
-                        </a>
-                        <a href="https://api.whatsapp.com/message/VAKBPNJBP4RYJ1?autoload=1&app_absent=0" target="_blank" class="footer-social-btn whatsapp">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
+                            <i class="fab fa-instagram"></i> Siga @nataliaduarteatelie no Instagram
                         </a>
                     </div>
                 </div>
@@ -2466,16 +2453,6 @@
                         content_name: 'Método Do 0 à Confeiteira',
                         value: 247.00,
                         currency: 'BRL'
-                    });
-                }
-            });
-        });
-
-        document.querySelectorAll('a[href*="whatsapp"]').forEach(wpp => {
-            wpp.addEventListener('click', () => {
-                if (typeof fbq === 'function') {
-                    fbq('track', 'Contact', {
-                        content_name: 'WhatsApp Click'
                     });
                 }
             });
