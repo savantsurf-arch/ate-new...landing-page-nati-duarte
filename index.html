@@ -214,17 +214,26 @@
         }
 
         .hero-tag {
-            display: inline-block;
-            font-size: 11px;
-            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 900;
             letter-spacing: 3px;
-            color: var(--primary-pink);
+            color: #ffffff;
             text-transform: uppercase;
-            margin-bottom: 12px;
-            background: rgba(229, 130, 141, 0.12);
-            padding: 4px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(229, 130, 141, 0.25);
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, rgba(229, 130, 141, 0.38) 0%, rgba(229, 130, 141, 0.15) 100%);
+            padding: 9px 26px;
+            border-radius: 30px;
+            border: 2px solid var(--primary-pink);
+            box-shadow: 0 4px 25px rgba(229, 130, 141, 0.45);
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-tag i {
+            color: var(--primary-pink);
+            font-size: 17px;
         }
 
         .hero-title {
@@ -1799,7 +1808,7 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <span class="hero-tag">CURSO ONLINE</span>
+                    <span class="hero-tag"><i class="fas fa-play-circle"></i> CURSO ONLINE</span>
                     <h1 class="hero-title">
                         Método Do 0 à
                         <span class="title-script">Confeiteira</span>
